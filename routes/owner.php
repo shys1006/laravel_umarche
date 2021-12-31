@@ -9,6 +9,7 @@ use App\Http\Controllers\Owner\Auth\NewPasswordController;
 use App\Http\Controllers\Owner\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Owner\Auth\RegisteredUserController;
 use App\Http\Controllers\Owner\Auth\VerifyEmailController;
+use App\Http\Controllers\Owner\Auth\ShopController;
 
 
 /*
@@ -24,6 +25,13 @@ use App\Http\Controllers\Owner\Auth\VerifyEmailController;
 
 Route::get('/', function () {
     return view('owner.welcome');
+});
+
+Route::prefix('shops')->
+    middleware('auth:owners')->group(function(){
+        Route::get('/index', [App\Http\Controllers\Owner\ShopController::class, 'index'])->name('shops.index');
+        Route::get('/edit/{shop}', [App\Http\Controllers\Owner\ShopController::class, 'edit'])->name('shops.edit');
+        Route::post('/update/{shop}', [App\Http\Controllers\Owner\ShopController::class, 'update'])->name('shops.update');
 });
 
 Route::get('/dashboard', function () {
