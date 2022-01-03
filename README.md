@@ -1,5 +1,15 @@
 ## udemy Laravel講座
 
+## ダウンロード方法
+git clone
+
+git clone https://github.com/shys1006/laravel_umarche.git
+
+git clone ブランチを指定してダウンロードする場合
+
+git clone -b ブランチ名 https://github.com/shys1006/laravel_umarche.git
+
+もしくはzipファイルでダウンロードしてください
 ##　インストール方法
 
 画像のダミーデータ画像のダミーデータは
