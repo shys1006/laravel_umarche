@@ -36,7 +36,7 @@ php artisan migrate:fresh --seed
 
 php artisan serve で簡易サーバーを立ち上げ、表示確認してください。
 
-# インストール後の実施事項
+## インストール後の実施事項
 
 画像のダミーデータは public/imagesフォルダ内に sample1.jpg 〜 sample6.jpg として 保存しています。
 
@@ -46,7 +46,7 @@ storage/app/public/productsフォルダ内に 保存すると表示されます�
 
 ショップの画像も表示する場合は、 storage/app/public/shopsフォルダを作成し 画像を保存してください。
 
-# 決済について
+## 決済について
 決済のテストとしてstripeを利用しています。 
 
 stripeをGoogleなどで検索して、ユーザー登録を済ませてください。
@@ -57,7 +57,7 @@ stripeをGoogleなどで検索して、ユーザー登録を済ませてくだ�
 STRIPE_PUBLIC_KEY="自身の公開キー"
 STRIPE_SECRET_KEY="自身のシークレットキー"
 
-# メールについて
+## メールについて
 メールのテストとしてmailtrapを利用しています。 
 
 こちらもstripe同様、検索してログインを済ませてください。
