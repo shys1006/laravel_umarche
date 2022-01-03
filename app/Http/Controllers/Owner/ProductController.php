@@ -175,6 +175,7 @@ class ProductController extends Controller
                         $product->image3 = $request->image3;
                         $product->image4 = $request->image4;
                         $product->is_selling = $request->is_selling;
+                        $product->save();
 
                     if($request->type === \Constant::PRODUCT_LIST['add']){
                         $newQuantity = $request->quantity;
@@ -208,6 +209,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::findOrFail($id)->delete(); 
+
+        return redirect()
+        ->route('owner.products.index')
+        ->with(['message' => '商品を削除しました。',
+        'status' => 'alert']);
     }
 }
